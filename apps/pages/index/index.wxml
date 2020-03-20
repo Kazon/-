@@ -1,0 +1,85 @@
+<!--index.wxml-->
+<!-- 遮盖层 -->
+<view class="cover {{car_deatil ? '': 'shop-hide'}}" data-cardetail="{{car_deatil}}" bindtap="CarDetailSwitch" catchtouchmove="ture"></view>
+<!-- 顶部店铺详情+活动 -->
+<view class="top-shop">
+  <view>
+    <image src="../img/shop-logo.png" class="shop-logo"></image>
+    <view class="shop-name">
+      自助点餐系统
+      <text class="shop-notice">{{notice}}</text>
+    </view>
+    <icon class="shop-search" type="search" color="white" bindtap="Jsearch"></icon>
+  </view>
+  <view class="shop-discount" bindtap="discount">{{discount}}</view>
+</view>
+<!-- 商品/活动tab栏 -->
+<view class="center-tab" bindtap="switch">
+  <view data-num="0" class="{{_num == 0 ? 'tab-show' : ''}}">商品</view>
+  <view data-num="1" class="{{_num == 1 ? 'tab-show' : ''}}">活动</view>
+</view>
+<!-- 商品类别+名称 -->
+<view class="shop-show">
+  <view class="{{_num == 0 ? 'flex-row' : 'shop-hide'}} ">
+    <scroll-view class="scroll-category scrollview" scroll-y="true">
+      <view class="shop-category flex-column {{item.cid == cateActiveId ? 'cate-active' : ''}}" wx:for="{{category_array}}" wx:key="key" wx:for-item="item" data-cateid="{{item.cid}}" bindtap="switchCateActive">
+        {{item.cname}}
+      </view>
+    </scroll-view>
+    <scroll-view class="scroll-item scrollview" scroll-into-view="{{i+cateActiveId}}" scroll-y="true">
+      <view class="shop-item  flex-column" wx:for="{{category_array}}" wx:key="key" wx:for-item="citem">
+        <view class="shop-item-category" id="{{i+citem.cid}}">{{citem.cname}}</view>
+        <view wx:for="{{item_array}}" wx:key="key" wx:for-item="iitem"  wx:if="{{citem.cid == iitem.cid}}" class="shop-item-item">
+          <text class="shop-item-name">{{iitem.sname}}</text>
+          <view class="shop-item-price flex-row">￥{{iitem.price}}
+            <view wx:if="{{iitem.state == 0}}"  class="shop-item-number flex-row">
+              <image src="../img/delete.png" bindtap="del" data-sid="{{iitem.sid}}"></image>
+              <input disabled="false" type="number" value="{{iitem.count}}"></input>
+              <image src="../img/add.png" bindtap="add" data-sid="{{iitem.sid}}"></image>
+            </view>
+            <view class="shop-item-empty" wx:else>
+              已售空
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="{{_num == 1 ? 'shop-acti' : 'shop-hide'}}">
+    活动与服务
+    <view class="shop-discount">{{discount}}</view>
+  </view>
+</view>
+<!-- 购物车显示 -->
+<view class="shop-car">
+  <view class="shop-car-detail {{car_deatil ? 'car-detail-show': ''}}">
+    <view class="car-detail-top flex-row">
+      <text class="car-detail-text">已点菜品</text>
+      <view class="car-detail-img iconfont icon-btn_delete" bindtap="CleanCar"> 
+        <text style="font-size: 26rpx">清空</text>
+      </view>
+    </view>
+    <scroll-view class="car-detail-group scrollview" scroll-y="true">
+      <view wx:for="{{temp_car}}" wx:key="key" wx:for-item="item" class="car-detail-item flex-row">
+        <text class="car-item-name">{{item.sname}}</text>
+        <view class="car-item-price flex-row">
+          <text class="car-item-p">￥{{item.price}}</text>
+          <view class="shop-item-number flex-row">
+            <image src="../img/delete.png" bindtap="cardel" data-sid="{{item.sid}}"></image>
+            <input disabled="false" type="number" value="{{item.count}}"></input>
+            <image src="../img/add.png" bindtap="add" data-sid="{{item.sid}}"></image>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="shop-car-bottom flex-row">
+    <view class="shop-car-show">
+      <view class="shop-car-img iconfont icon-31gouwuchexuanzhong" data-cardetail="{{car_deatil}}" bindtap="CarDetailSwitch">
+        <view class="{{car_totalcount > 0 ? 'car-totalcount' : 'shop-hide'}}">{{car_totalcount}}</view>
+      </view>
+      <text>￥{{totalPrice}}</text> 
+    </view>
+    <view class="shop-car-ready" bindtap="submit">选好了</view>
+  </view>
+</view>

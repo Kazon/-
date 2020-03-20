@@ -1,0 +1,23 @@
+{
+  "id": "1693896",
+  "name": "小程序点餐",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "201221",
+      "name": "3.1购物车-选中",
+      "font_class": "31gouwuchexuanzhong",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "10939124",
+      "name": "删除清空",
+      "font_class": "btn_delete",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    }
+  ]
+}

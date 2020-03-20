@@ -1,0 +1,45 @@
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.shop-item-name{
+  font-size: 26rpx;
+  color: #1A1A1A;
+}
+
+.shop-item-price{
+  align-items: center;
+  height: 120rpx;
+  color: #f20;
+  font-size: 26rpx;
+}
+
+.shop-item-number image{
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.shop-item-number{
+  align-items: center;
+}
+
+.shop-item-empty{
+  height: 40rpx;
+  width: 120rpx;
+  line-height: 40rpx;
+  border: 4rpx solid #f20;
+  text-align: center;
+  font-size: 28rpx;
+  color: #f20;
+  font-family: 楷体;
+}
+
+.shop-item-number input{
+  width: 40rpx;
+  margin: 0 10rpx;
+  color: #000;
+  text-align: center;
+  font-size: 30rpx;
+}

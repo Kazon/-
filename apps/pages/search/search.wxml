@@ -1,0 +1,24 @@
+<view class="top flex">
+  <view class="search flex">
+    <icon class="icon-search" size="25" type="search"></icon>
+    <input type="text" value="{{search}}" bindinput="getSearch"></input>
+    <view class="remove" bindtap="ClearInput">×</view>
+  </view>
+  <view class="btn" bindtap="search">搜索</view>
+</view>
+<view class="goods-show">
+  <view class="goodsList" wx:for="{{macthingGoods}}" wx:key="key" wx:for-item="item">
+    <text class="shop-item-name">{{item.sname}}</text>
+    <view class="shop-item-price flex-row">￥{{item.price}}
+      <view wx:if="{{item.state == 0}}"  class="shop-item-number flex-row">
+        <image src="../img/delete.png" bindtap="del" data-sid="{{item.sid}}"></image>
+        <input disabled="false" type="number" value="{{item.count}}"></input>
+        <image src="../img/add.png" bindtap="add" data-sid="{{item.sid}}"></image>
+      </view>
+      <view class="shop-item-empty" wx:else>
+        已售空
+      </view>
+    </view>
+  </view>
+</view>
+

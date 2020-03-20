@@ -1,0 +1,36 @@
+{
+  "pages": [
+    "pages/entry/entry",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/indent/indent",
+    "pages/order/order",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#268AEA",
+    "navigationBarTitleText": "自助点餐系统",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor": "#008de1",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "点餐",
+        "iconPath": "icons/home.png",
+        "selectedIconPath": "icons/home_active.png"
+      },
+      {
+        "pagePath": "pages/indent/indent",
+        "text": "订单",
+        "iconPath": "icons/indent.png",
+        "selectedIconPath": "icons/indent_active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

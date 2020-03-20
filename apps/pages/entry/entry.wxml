@@ -1,0 +1,14 @@
+<view class="top">
+  <text class="shop">自助点餐系统</text>
+  <text>
+    Hi，{{username}}，欢迎光临！
+  </text>
+</view>
+
+<view class="cen flex">
+  <view class="userImg" >
+    <image src="{{userimg}}"></image>
+  </view>
+</view>
+
+<button class="entry" open-type="getUserInfo" bindtap="getUserData">开始点餐</button>

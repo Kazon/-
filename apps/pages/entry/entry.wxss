@@ -1,0 +1,65 @@
+page{
+  background: url('https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1584448491396&di=e0f28a80db4706548bcd88179b14e920&imgtype=0&src=http%3A%2F%2Fdpic.tiankong.com%2Fhv%2F0v%2FQJ8860255017.jpg');
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+text{
+  display: block;
+  margin: 10rpx 0;
+  font-size: 28rpx;
+  color: #fff;
+}
+
+.flex{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.top{
+  width: 340rpx;
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.shop{
+  font-size: 38rpx;
+  font-weight: 700;
+  color: #fff;
+}
+
+.cen{
+  height: 340rpx;
+  width: 340rpx;
+}
+
+.userImg{
+  width: 180rpx;
+  height: 180rpx;
+  border: 4rpx solid #fff;
+  border-radius: 10rpx;
+  background-color: #E8ECEB;
+}
+
+.userImg image{
+  width: 180rpx;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+
+.entry{
+  display: block;
+  padding: 0!important;
+  height: 80rpx;
+  width: 260rpx!important;
+  background-color: rgb(0, 0, 0, 0.3);
+  color: #FFFFFF;
+  line-height: 72rpx;
+  border: 4rpx solid #BFB8B2;
+  font-weight: normal!important;
+  margin-top: 10vh;
+}

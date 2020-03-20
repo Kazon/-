@@ -1,0 +1,54 @@
+
+<scroll-view scroll-y="true" class="scrollview">
+  <view style="display:flex;align-items: center;flex-direction: column;">
+    <view class="tips flex" wx:if="{{deskid === ''}}">
+      菜品已加入购物车，请扫桌码后下单
+    </view>
+    <view class="tips flex" wx:else>
+      菜品已加入购物车，下单后请耐心等待
+    </view>
+    <view class="flex order-detail">
+      <form>
+        <view class="goodscount form-item">
+          共{{car_totalcount}}件
+        </view>
+        <view class="form-item flex totalPrice">
+          合计：
+          <text class="totalPrice">￥{{totalPrice}}</text>
+        </view>
+        <!-- <view class="form-item flex desk">
+          <input type="number" class="deskid" placeholder="请输入正确的桌号"></input>
+        </view> -->
+        <view class="goodscount form-item">
+          桌号：{{deskid}}
+        </view>
+        <view class="form-item flex taste">
+          <textarea class="taste-detail" placeholder="请输入您的口味、忌口（可不填）"></textarea>
+        </view>
+        <view class="flex form-item desk">
+          <view class="detail-title">
+            点单详情
+          </view>
+        </view>
+        <view class="form-item detail-item" wx:for="{{temp_car}}" wx:key="key" wx:for-item="item">
+          <text class="shop-item-name" style="display:block; height:60rpx; line-height:60rpx;">{{item.sname}}</text>
+          <view class="shop-item-price flex-row" style="height: 100rpx;">￥{{item.price}}
+            <view class="shop-item-number flex-row">
+              <image src="../img/delete.png" bindtap="del" data-sid="{{item.sid}}"></image>
+              <input disabled="false" type="number" value="{{item.count}}"></input>
+              <image src="../img/add.png" bindtap="add" data-sid="{{item.sid}}"></image>
+            </view>
+          </view>
+        </view>
+      </form>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="bottom">
+  <view class="back choice" bindtap="back">返回点菜</view>
+  <view wx:if="{{deskid === ''}}" class="iconfont icon-saoyisao go choice" bindtap="scan">
+    去扫一扫
+  </view>
+  <view wx:else class="go choice" bindtap="go">下单</view>
+</view>

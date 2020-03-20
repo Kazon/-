@@ -1,0 +1,16 @@
+<view class="box" wx:for="{{3}}" wx:key="key" wx:for-item="item">
+  <view class="flex-row order-id">
+    订单号：132154563
+    <view style="color: #7B7B7B;">已完成</view>
+  </view>
+  <scroll-view class="order-detail" scroll-y="true">
+    <view class="flex-row detail-item" wx:for="{{4}}" wx:key="okey" wx:for-item="oitem">
+      <view>肉片汤米粉</view>
+      <view style="color: #7B7B7B;">×2</view>
+    </view>
+  </scroll-view>
+  <view class="order-id flex-row total">
+    合计：
+    <view style="color: #7B7B7B; font-size:26rpx">共2件  20元</view>
+  </view>
+</view>
